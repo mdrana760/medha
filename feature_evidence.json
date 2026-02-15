@@ -1,0 +1,123 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-romantic-interactive-experience-that-initially-shows-a-cute-animated-gift-box-centered-on-the-screen-over-a-soft-romantic-pink-purple-gradient-background",
+      "featureTitle": "Create a single-page romantic interactive experience that initially shows a cute animated gift box centered on the screen over a soft romantic pink/purple gradient background.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-voice-playback-using-the-browser-web-speech-api-to-speak-medha-open-your-gift-on-initial-load-with-a-graceful-fallback-ux-for-browsers-that-block-autoplay-e-g-show-a-small-on-screen-prompt-to-enable-sound-via-a-tap-click",
+      "featureTitle": "Implement voice playback using the browser Web Speech API to speak: \"Medha, open your gift\" on initial load, with a graceful fallback UX for browsers that block autoplay (e.g., show a small on-screen prompt to enable sound via a tap/click).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useSpeechSynthesis.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-on-gift-box-click-tap-run-a-single-smooth-animation-sequence-gift-opens-a-cute-animated-boy-and-cute-animated-girl-appear-the-boy-walks-forward-and-kneels-heart-animations-float-in-the-background-the-voice-speaks-i-love-you-and-the-on-screen-text-i-love-you-appears",
+      "featureTitle": "On gift box click/tap, run a single, smooth animation sequence: gift opens; a cute animated boy and cute animated girl appear; the boy walks forward and kneels; heart animations float in the background; the voice speaks \"I love you\"; and the on-screen text \"I love you ❤️\" appears.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/GiftExperience.tsx",
+        "frontend/src/components/HeartField.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-interactive-scene-using-clean-well-commented-react-typescript-code-and-css-tailwind-styling-no-adult-content-keeping-the-overall-look-cute-romantic-and-consistent-across-components",
+      "featureTitle": "Implement the interactive scene using clean, well-commented React + TypeScript code and CSS/Tailwind styling (no adult content), keeping the overall look cute, romantic, and consistent across components.",
+      "files": [
+        "frontend/src/components/GiftExperience.tsx",
+        "frontend/src/hooks/useSpeechSynthesis.ts",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-do-not-implement-a-python-flask-server-instead-serve-the-site-using-the-existing-internet-computer-frontend-setup-and-keep-the-backend-minimal-no-backend-changes-unless-needed-for-serving-or-configuration",
+      "featureTitle": "Do not implement a Python/Flask server; instead, serve the site using the existing Internet Computer frontend setup and keep the backend minimal (no backend changes unless needed for serving or configuration).",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-any-required-custom-art-as-static-assets-not-served-through-the-backend-and-reference-them-from-the-frontend-prefer-cute-simple-illustrations-that-match-the-romantic-theme",
+      "featureTitle": "Add any required custom art as static assets (not served through the backend) and reference them from the frontend. Prefer cute, simple illustrations that match the romantic theme.",
+      "files": [
+        "frontend/src/components/GiftExperience.tsx",
+        "frontend/src/components/HeartField.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

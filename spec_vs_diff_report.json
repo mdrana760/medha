@@ -1,0 +1,63 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-15T14:30:23.867Z",
+  "summary": "Implemented a single-page React gift-box experience with gradient background, click-triggered animation state machine, floating heart background, and Web Speech API voice with a user-gesture fallback prompt. However, required generated art assets are not present in the diff, and additional authentication/actor/react-query infrastructure was introduced despite being out of scope.",
+  "missing_requirements": [
+    {
+      "id": "REQ-6",
+      "requirement": "Add any required custom art as static assets (not served through the backend) and reference them from the frontend. Any generated images are placed under frontend/public/assets/generated and loaded directly by the frontend.",
+      "reason": "The frontend references generated image paths (e.g., heart icon), but the diff does not include any added image files under frontend/public/assets/generated (or anywhere). Therefore the required custom art assets are not implemented/shipped in this change set.",
+      "evidence": [
+        "frontend/src/components/HeartField.tsx (references /assets/generated/heart-icon.dim_128x128.png)",
+        "File diff summary shows only code/text files added; no frontend/public/assets/generated images listed"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication context/provider and identity-aware actor creation hooks (implying auth/login capability).",
+      "reason": "User accounts/authentication flows are explicitly listed as non-goals; these hooks/providers introduce authentication infrastructure that is not requested for the gift-box experience.",
+      "evidence": [
+        "frontend/src/main.tsx (wraps app with InternetIdentityProvider)",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "React Query client/provider setup and actor/identity query invalidation logic.",
+      "reason": "No backend calls are needed for the requested experience; adding React Query and related query invalidation/actor-fetching logic is not requested and adds extra app complexity.",
+      "evidence": [
+        "frontend/src/main.tsx (QueryClientProvider)",
+        "frontend/src/hooks/useActor.ts (uses @tanstack/react-query)",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "description": "Use of lucide-react icon components (Volume2/VolumeX) for UI.",
+      "reason": "Not requested in the BuildRequest; UI could be implemented without adding/using an icon library.",
+      "evidence": [
+        "frontend/src/components/GiftExperience.tsx (imports Volume2, VolumeX from lucide-react)"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/GiftExperience.tsx",
+    "frontend/src/components/HeartField.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useSpeechSynthesis.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

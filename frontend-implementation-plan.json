@@ -1,0 +1,183 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Romantic gift-box single-page experience (voice + animations)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-page centered gift box scene over a soft romantic pink/purple gradient background (responsive).",
+      "acceptanceCriteria": [
+        "On first load, only the gift box scene is visible (centered) with a pink/purple gradient background.",
+        "Layout is responsive and remains centered on common mobile viewport sizes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page scene shell that renders only the centered gift box experience on first load; apply a full-viewport layout with a soft romantic pink/purple gradient background using Tailwind classes."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global base styles for full-height layout and the romantic background gradient (body/root), keeping the gift box centered and responsive."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the app mounts the new App component cleanly and keeps the experience full-screen; keep the existing providers intact while making sure no other UI renders around the scene."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add Web Speech API voice playback on initial load for “Medha, open your gift”, including autoplay-block fallback prompt and unsupported-browser handling.",
+      "acceptanceCriteria": [
+        "If the browser permits, the phrase is spoken on page load using SpeechSynthesis.",
+        "If autoplay is blocked, the UI displays a clear, non-intrusive prompt (tap/click) that enables speech and then plays the phrase.",
+        "If SpeechSynthesis is unavailable, the app does not crash and displays a short message indicating voice is unsupported."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useSpeechSynthesis.ts",
+          "operation": "create",
+          "description": "Implement a small React + TypeScript hook that wraps browser SpeechSynthesis to (1) detect support, (2) attempt initial playback, and (3) expose a user-gesture 'enable sound' action for fallback when playback is blocked."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the speech hook to speak “Medha, open your gift” on initial load; show a small, non-intrusive on-screen prompt button/text when a tap/click is required to enable speech; show an English-only unsupported message when SpeechSynthesis is missing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "On gift click/tap, run a one-time animation sequence: gift opens, characters appear, boy walks and kneels, hearts float, speak “I love you”, and show “I love you ❤️”.",
+      "acceptanceCriteria": [
+        "Clicking/tapping the gift box triggers the full sequence exactly once (subsequent clicks do not restart mid-sequence).",
+        "Gift opening animation is visibly smooth (CSS animations/transitions).",
+        "Boy and girl are hidden before the click and appear as part of the sequence.",
+        "Boy visibly moves forward and transitions into a kneeling pose/state as part of the sequence.",
+        "Hearts float in the background during/after the reveal sequence.",
+        "After the click sequence begins, the app speaks \"I love you\" (or prompts to enable sound if blocked) and displays the text \"I love you ❤️\" on screen."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GiftExperience.tsx",
+          "operation": "create",
+          "description": "Create the interactive scene component with a simple, well-commented state machine (e.g., idle → opening → reveal → kneel → complete) that runs once; handle tap/click on the gift box and coordinate visuals, hearts, on-screen text, and voice playback."
+        },
+        {
+          "path": "frontend/src/components/HeartField.tsx",
+          "operation": "create",
+          "description": "Create a lightweight hearts background component that animates multiple floating hearts (CSS keyframes) and can be enabled during/after the reveal sequence."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS keyframes/classes for: gift opening transition, character fade/scale-in, boy walk-forward motion, kneel pose transition, and continuous floating hearts animation; keep animations smooth and mobile-friendly."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Render GiftExperience as the only main content; pass/compose the speech hook so the click sequence can speak “I love you” with the same autoplay-block fallback prompt behavior."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Keep implementation clean and well-commented (React + TypeScript + Tailwind/CSS), cute/romantic style, English-only UI text, and no adult content.",
+      "acceptanceCriteria": [
+        "Code includes clear comments explaining the animation sequence, state transitions, and voice playback handling.",
+        "Visual style is cute/romantic and contains no adult or explicit content.",
+        "All UI text shown to users is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GiftExperience.tsx",
+          "operation": "modify",
+          "description": "Add clear inline comments documenting animation phases, state transitions, and how/when voice playback is invoked (including fallback prompt flow); ensure all user-facing strings are English and content stays cute/romantic."
+        },
+        {
+          "path": "frontend/src/hooks/useSpeechSynthesis.ts",
+          "operation": "modify",
+          "description": "Add comments explaining support detection, playback attempts, and user-gesture enablement; ensure failures are handled gracefully without crashes."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Refine styling for consistent cute/romantic look (soft shadows, pastel tones, gentle motion) while keeping styles maintainable and documented where non-obvious."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Ensure the app is served via the existing Internet Computer React frontend setup; do not add Python/Flask files.",
+      "acceptanceCriteria": [
+        "The app runs within the provided React frontend template and does not add Python/Flask files.",
+        "No backend functionality is added unless strictly required; if no backend calls are needed, backend remains unchanged."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Confirm the app remains a single-page React entry (root div + main.tsx module) with no references to Python/Flask assets; keep metadata minimal and aligned with the single-page experience."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the experience is fully client-side (no backend calls required for this feature set) and does not rely on any server-rendered pages or non-React entrypoints."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add required custom art as static generated assets under frontend/public/assets/generated and reference them in the scene (visuals work without voice).",
+      "acceptanceCriteria": [
+        "Any generated images are placed under frontend/public/assets/generated and loaded directly by the frontend.",
+        "The scene renders correctly even if voice playback is unavailable (visuals still work)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/gift-box-closed.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path and filename for the closed gift box illustration."
+        },
+        {
+          "path": "frontend/public/assets/generated/gift-box-open.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path and filename for the open gift box illustration."
+        },
+        {
+          "path": "frontend/public/assets/generated/cute-boy-stand.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path and filename for the boy standing pose (transparent background)."
+        },
+        {
+          "path": "frontend/public/assets/generated/cute-boy-kneel.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path and filename for the boy kneeling pose (transparent background)."
+        },
+        {
+          "path": "frontend/public/assets/generated/cute-girl-stand.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path and filename for the girl standing pose (transparent background)."
+        },
+        {
+          "path": "frontend/public/assets/generated/heart-icon.dim_128x128.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path and filename for the floating heart icon."
+        },
+        {
+          "path": "frontend/src/components/GiftExperience.tsx",
+          "operation": "modify",
+          "description": "Reference and render the generated assets from: frontend/public/assets/generated/gift-box-closed.dim_512x512.png, frontend/public/assets/generated/gift-box-open.dim_512x512.png, frontend/public/assets/generated/cute-boy-stand.dim_512x512.png, frontend/public/assets/generated/cute-boy-kneel.dim_512x512.png, frontend/public/assets/generated/cute-girl-stand.dim_512x512.png; ensure the visuals/sequence work even when voice is unsupported or disabled."
+        },
+        {
+          "path": "frontend/src/components/HeartField.tsx",
+          "operation": "modify",
+          "description": "Render floating hearts using the generated heart icon at frontend/public/assets/generated/heart-icon.dim_128x128.png and keep the animation independent from voice availability."
+        }
+      ]
+    }
+  ]
+}

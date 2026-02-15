@@ -1,0 +1,18 @@
+{
+  "backend/main.mo": "Minimal Motoko actor with no functions defined.",
+  "feature_evidence.json": "Lists implemented features, related files, components, and confidence metadata for the romantic gift experience.",
+  "frontend-file-summaries.txt": "Provides short descriptions of key frontend source files for reference.",
+  "frontend/index.css": "Tailwind setup and global CSS variables defining color themes, styles, and layout rules including dark mode.",
+  "frontend/index.html": "Base HTML file mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "Root React component rendering the full-screen GiftExperience scene.",
+  "frontend/src/components/GiftExperience.tsx": "Controls the full animation sequence, speech triggers, and user interactions for the gift experience.",
+  "frontend/src/components/HeartField.tsx": "Generates and animates floating heart elements across the background.",
+  "frontend/src/hooks/useActor.ts": "React Query hook that initializes and manages an authenticated or anonymous backend actor.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides Internet Identity login, logout, and identity state management via React context.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder for backend-related React Query hooks; currently empty.",
+  "frontend/src/hooks/useSpeechSynthesis.ts": "Custom hook wrapping SpeechSynthesis with autoplay detection, fallback handling, and voice selection.",
+  "frontend/src/index.css": "Defines Tailwind layers, theme color variables for light/dark modes, global styles, and custom keyframe animations for gift, character, and heart effects.",
+  "frontend/src/main.tsx": "Bootstraps the React app with React Query and Internet Identity providers and loads global styles.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom color tokens, extended theme options, plugins, and animation keyframes.",
+  "project_state.json": "Stores project metadata including goals, features, architecture notes, required assets, and version info."
+}
