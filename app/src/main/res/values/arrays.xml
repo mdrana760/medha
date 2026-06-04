@@ -1,0 +1,14 @@
+<resources>
+    <string-array name="auto_reply_modes">
+        <item>সবসময়</item>
+        <item>স্ক্রিন বন্ধ থাকলে</item>
+        <item>অন্য অ্যাপে থাকলে</item>
+        <item>সময়সূচি অনুযায়ী</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>বাংলা</item>
+        <item>English</item>
+        <item>মিশ্র (Mixed)</item>
+    </string-array>
+</resources>
