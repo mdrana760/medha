@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_title"
+            android:textColor="@color/medha_primary"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dashboard"
+            android:textColor="@color/text_secondary" />
+
+        <!-- Master toggle -->
+        <LinearLayout
+            style="@style/MedhaCard"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/master_toggle"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMasterStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/master_on"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchMaster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Status card -->
+        <LinearLayout
+            style="@style/MedhaCard"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_firebase"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvFirebaseStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_connected"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tvPermStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- Stats -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/stats_today"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <LinearLayout style="@style/MedhaCard" android:layout_width="0dp" android:layout_weight="1" android:layout_marginEnd="6dp" android:gravity="center" android:orientation="vertical">
+                <TextView android:id="@+id/tvStatMessages" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/medha_primary" android:textSize="26sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stats_messages" android:textColor="@color/text_secondary" android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/MedhaCard" android:layout_width="0dp" android:layout_weight="1" android:layout_marginHorizontal="3dp" android:gravity="center" android:orientation="vertical">
+                <TextView android:id="@+id/tvStatPending" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/bubble_pending" android:textSize="26sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stats_pending" android:textColor="@color/text_secondary" android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/MedhaCard" android:layout_width="0dp" android:layout_weight="1" android:layout_marginStart="6dp" android:gravity="center" android:orientation="vertical">
+                <TextView android:id="@+id/tvStatApproved" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/bubble_active" android:textSize="26sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stats_approved" android:textColor="@color/text_secondary" android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Quick nav -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnApps" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="4dp" android:text="@string/menu_apps" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnProfile" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:text="@string/menu_profile" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnLogs" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:text="@string/menu_logs" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnSettings" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="4dp" android:text="@string/menu_settings" />
+        </LinearLayout>
+
+        <!-- Recent activity -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/recent_activity"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNoActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_activity"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false" />
+    </LinearLayout>
+</ScrollView>

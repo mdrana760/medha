@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/medha_primary"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/settings_title"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Response delay -->
+            <LinearLayout style="@style/MedhaCard" android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/settings_response_delay" android:textColor="@color/text_primary" android:textStyle="bold" />
+                    <TextView android:id="@+id/tvDelayValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="30" android:textColor="@color/medha_primary" android:textStyle="bold" />
+                </LinearLayout>
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderDelay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:valueFrom="0"
+                    android:valueTo="60"
+                    android:stepSize="1" />
+            </LinearLayout>
+
+            <!-- Approval toggle -->
+            <LinearLayout style="@style/MedhaCard" android:gravity="center_vertical" android:orientation="horizontal">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_require_approval" android:textColor="@color/text_primary" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_require_approval_desc" android:textColor="@color/text_secondary" android:textSize="12sp" />
+                </LinearLayout>
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swApproval" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Auto-reply mode -->
+            <LinearLayout style="@style/MedhaCard" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_autoreply_mode" android:textColor="@color/text_primary" android:textStyle="bold" />
+                <Spinner android:id="@+id/spinnerMode" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <!-- Language -->
+            <LinearLayout style="@style/MedhaCard" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_language" android:textColor="@color/text_primary" android:textStyle="bold" />
+                <Spinner android:id="@+id/spinnerLanguage" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <!-- TTS -->
+            <LinearLayout style="@style/MedhaCard" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/settings_tts" android:textColor="@color/text_primary" android:textStyle="bold" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swTts" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Schedule -->
+            <LinearLayout style="@style/MedhaCard" android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/settings_schedule" android:textColor="@color/text_primary" android:textStyle="bold" />
+                    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swSchedule" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/scheduleGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Start" android:textColor="@color/text_secondary" />
+                        <TextView android:id="@+id/tvStartValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="21:00" android:textColor="@color/medha_primary" />
+                    </LinearLayout>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderStart" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="0" android:valueTo="23" android:stepSize="1" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="End" android:textColor="@color/text_secondary" />
+                        <TextView android:id="@+id/tvEndValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09:00" android:textColor="@color/medha_primary" />
+                    </LinearLayout>
+                    <com.google.android.material.slider.Slider android:id="@+id/sliderEnd" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="0" android:valueTo="23" android:stepSize="1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/settings_version"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <color name="medha_primary">#6750A4</color>
+    <color name="medha_primary_dark">#4F378B</color>
+    <color name="medha_secondary">#7D5260</color>
+    <color name="medha_accent">#00BFA5</color>
+
+    <color name="bubble_active">#2E7D32</color>   <!-- green: active -->
+    <color name="bubble_pending">#F9A825</color>  <!-- yellow: pending -->
+    <color name="bubble_error">#C62828</color>    <!-- red: error -->
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="bg">#FFF7F2FA</color>
+    <color name="card">#FFFFFFFF</color>
+    <color name="text_primary">#FF1C1B1F</color>
+    <color name="text_secondary">#FF49454F</color>
+    <color name="divider">#FFE0E0E0</color>
+</resources>

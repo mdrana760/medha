@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">Medha</string>
+    <string name="app_name_bn">মেধা</string>
+    <string name="notification_service_label">Medha auto-reply listener</string>
+
+    <!-- Login -->
+    <string name="welcome_title">মেধা</string>
+    <string name="welcome_subtitle">আপনার ব্যক্তিগত AI সহকারী</string>
+    <string name="welcome_tagline">আপনি ব্যস্ত থাকলে মেধা আপনার হয়ে উত্তর দেওয়ার প্রস্তাব তৈরি করবে — পাঠানোর আগে সবসময় আপনার অনুমতি নেবে।</string>
+    <string name="sign_in_with_google">Google দিয়ে সাইন ইন করুন</string>
+    <string name="signing_in">সাইন ইন হচ্ছে…</string>
+    <string name="sign_in_failed">সাইন ইন ব্যর্থ হয়েছে। আবার চেষ্টা করুন।</string>
+
+    <!-- Setup -->
+    <string name="setup_welcome_title">স্বাগতম!</string>
+    <string name="setup_welcome_body">মেধা সেট আপ করতে কয়েকটি ধাপ লাগবে। চলুন শুরু করি।</string>
+    <string name="setup_next">পরবর্তী</string>
+    <string name="setup_back">পূর্ববর্তী</string>
+    <string name="setup_finish">শেষ করুন</string>
+
+    <string name="setup_apikey_title">Gemini API কী</string>
+    <string name="setup_apikey_hint">আপনার Gemini API কী লিখুন</string>
+    <string name="setup_get_apikey">API কী নিন</string>
+    <string name="setup_validate_apikey">কী যাচাই করুন</string>
+    <string name="setup_apikey_help">aistudio.google.com থেকে নিজের ফ্রি API কী নিন। কীটি এনক্রিপ্ট করে সংরক্ষণ করা হয়।</string>
+    <string name="apikey_valid">কী সঠিক! ✓</string>
+    <string name="apikey_invalid">কী সঠিক নয় বা কাজ করছে না।</string>
+    <string name="apikey_empty">অনুগ্রহ করে একটি API কী লিখুন।</string>
+    <string name="apikey_testing">কী পরীক্ষা করা হচ্ছে…</string>
+
+    <string name="setup_permissions_title">অনুমতি</string>
+    <string name="setup_permissions_body">মেধা কাজ করার জন্য নিচের অনুমতিগুলো প্রয়োজন। প্রতিটি আপনি নিজে দিতে পারবেন এবং যেকোনো সময় বাতিল করতে পারবেন।</string>
+    <string name="perm_notifications">বিজ্ঞপ্তি দেখানো</string>
+    <string name="perm_notification_access">বিজ্ঞপ্তি অ্যাক্সেস</string>
+    <string name="perm_notification_access_desc">আগত বার্তা পড়ে উত্তর তৈরি করতে</string>
+    <string name="perm_overlay">স্ক্রিনের উপরে দেখানো</string>
+    <string name="perm_overlay_desc">উত্তর অনুমোদনের পপআপ দেখাতে</string>
+    <string name="perm_contacts">পরিচিতি (ঐচ্ছিক)</string>
+    <string name="perm_contacts_desc">প্রেরকের নাম দেখাতে</string>
+    <string name="perm_grant">দিন</string>
+    <string name="perm_granted">দেওয়া হয়েছে ✓</string>
+    <string name="perm_open_settings">সেটিংস খুলুন</string>
+
+    <string name="setup_apps_title">কোন অ্যাপ পর্যবেক্ষণ করবে?</string>
+    <string name="setup_apps_body">শুধু নির্বাচিত অ্যাপের বিজ্ঞপ্তি থেকে উত্তর তৈরি হবে।</string>
+
+    <string name="setup_done_title">সব প্রস্তুত!</string>
+    <string name="setup_done_body">মেধা এখন আপনার নির্বাচিত অ্যাপ পর্যবেক্ষণ করবে এবং প্রতিটি উত্তর পাঠানোর আগে আপনার অনুমতি নেবে।</string>
+
+    <!-- Main -->
+    <string name="dashboard">ড্যাশবোর্ড</string>
+    <string name="master_toggle">মেধা চালু</string>
+    <string name="master_on">মেধা সক্রিয়</string>
+    <string name="master_off">মেধা বন্ধ</string>
+    <string name="status_firebase">Firebase সিঙ্ক</string>
+    <string name="status_connected">সংযুক্ত</string>
+    <string name="status_disconnected">সংযুক্ত নয়</string>
+    <string name="stats_today">আজকের পরিসংখ্যান</string>
+    <string name="stats_messages">বার্তার উত্তর</string>
+    <string name="stats_pending">অপেক্ষমাণ</string>
+    <string name="stats_approved">অনুমোদিত</string>
+    <string name="recent_activity">সাম্প্রতিক কার্যকলাপ</string>
+    <string name="no_activity">এখনো কোনো কার্যকলাপ নেই।</string>
+
+    <string name="menu_apps">অ্যাপ</string>
+    <string name="menu_profile">প্রোফাইল</string>
+    <string name="menu_logs">কথোপকথন</string>
+    <string name="menu_settings">সেটিংস</string>
+
+    <!-- Profile -->
+    <string name="profile_title">প্রোফাইল</string>
+    <string name="profile_apikey">API কী</string>
+    <string name="profile_update_key">কী আপডেট করুন</string>
+    <string name="profile_sign_out">সাইন আউট</string>
+    <string name="profile_delete">অ্যাকাউন্ট মুছুন</string>
+    <string name="profile_delete_confirm">আপনি কি নিশ্চিত? এই কাজটি আর ফেরানো যাবে না।</string>
+
+    <!-- Settings -->
+    <string name="settings_title">সেটিংস</string>
+    <string name="settings_response_delay">উত্তরের বিলম্ব (সেকেন্ড)</string>
+    <string name="settings_autoreply_mode">স্বয়ংক্রিয় উত্তর মোড</string>
+    <string name="settings_language">ভাষা</string>
+    <string name="settings_require_approval">পাঠানোর আগে অনুমোদন নিন</string>
+    <string name="settings_require_approval_desc">নিরাপত্তার জন্য সবসময় চালু রাখার পরামর্শ দেওয়া হয়।</string>
+    <string name="settings_tts">কথা বলা (TTS)</string>
+    <string name="settings_schedule">সক্রিয় সময়সূচি</string>
+    <string name="settings_version">সংস্করণ</string>
+
+    <!-- Conversation log -->
+    <string name="logs_title">কথোপকথন</string>
+    <string name="logs_empty">কোনো কথোপকথন নেই।</string>
+    <string name="logs_search">খুঁজুন…</string>
+    <string name="logs_export">এক্সপোর্ট</string>
+
+    <!-- Overlay / reply preview -->
+    <string name="reply_preview_title">মেধার প্রস্তাবিত উত্তর</string>
+    <string name="reply_send_now">এখনই পাঠান</string>
+    <string name="reply_edit">সম্পাদনা</string>
+    <string name="reply_ignore">বাতিল</string>
+    <string name="reply_sent">উত্তর পাঠানো হয়েছে</string>
+    <string name="reply_ignored">উত্তর বাতিল করা হয়েছে</string>
+    <string name="reply_countdown">%1$d সেকেন্ড পর স্বয়ংক্রিয়ভাবে পাঠানো হবে</string>
+
+    <!-- Service notifications -->
+    <string name="svc_channel_name">Medha সেবা</string>
+    <string name="svc_channel_desc">মেধা সক্রিয় থাকার বিজ্ঞপ্তি</string>
+    <string name="svc_running">মেধা চলছে — আপনার অনুমতি ছাড়া কোনো উত্তর পাঠানো হবে না।</string>
+    <string name="reply_channel_name">উত্তরের প্রস্তাব</string>
+
+    <!-- Common -->
+    <string name="cancel">বাতিল</string>
+    <string name="save">সংরক্ষণ</string>
+    <string name="ok">ঠিক আছে</string>
+    <string name="error_generic">কিছু একটা ভুল হয়েছে।</string>
+    <string name="error_no_internet">ইন্টারনেট সংযোগ নেই।</string>
+    <string name="error_no_apikey">প্রথমে একটি Gemini API কী সেট করুন।</string>
+    <string name="error_firebase_missing">Firebase কনফিগার করা নেই (google-services.json অনুপস্থিত)। কিছু ফিচার সীমিত থাকবে।</string>
+</resources>
